@@ -14,4 +14,4 @@ COPY pyproject.toml* poetry.lock* ./
 RUN poetry config virtualenvs.in-project true
 RUN if [ -f pyprpject.toml ]; then poetry install --no-root; fi
 
-ENTRYPOINT poetry run uvicorn apis.main:app --host 0.0.0.0 --port 8000 --reload
+ENTRYPOINT poetry run uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload

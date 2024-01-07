@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from apis.db.base_class import Base
+from backend.db.base_class import Base
 from sqlalchemy import ForeignKey  # noqa: E501
 from sqlalchemy import Boolean, Column, DateTime, Integer, String, Text
 from sqlalchemy.orm import relationship
