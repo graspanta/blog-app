@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from backend.apis.v1.route_login import get_current_user
-from backend.db.models.users import User
+from backend.db.models.user import User
 from backend.db.repository.blog import (
     create_new_blog,
     delete_blog,
