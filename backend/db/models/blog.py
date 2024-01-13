@@ -10,7 +10,6 @@ from backend.db.base_class import Base
 class Blog(Base):
     id = Column(Integer, primary_key=True)
     title = Column(String(60), nullable=False)
-    slug = Column(String(60), nullable=False)
     content = Column(Text, nullable=True)
     author_id = Column(Integer, ForeignKey("user.id"))
     author = relationship("User", back_populates="blogs")

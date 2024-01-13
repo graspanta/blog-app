@@ -17,7 +17,7 @@ router = APIRouter()
 
 
 @router.post(
-    "/blogs", response_model=ShowBlog, status_code=status.HTTP_201_CREATED
+    "/blog", response_model=ShowBlog, status_code=status.HTTP_201_CREATED
 )  # noqa: E501
 def create_blog(
     blog: CreateBlog,
@@ -45,7 +45,7 @@ def get_all_blogs(db: Session = Depends(get_db)):
     return blogs
 
 
-@router.put("/blog/{id}", response_model=ShowBlog)
+@router.put("/update/{id}", response_model=ShowBlog)
 def update_a_blog(
     id: int,
     blog: UpdateBlog,
