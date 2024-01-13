@@ -1,4 +1,4 @@
-from datetime import date
+# from datetime import date
 
 from pydantic import BaseModel, validator
 
@@ -20,10 +20,10 @@ class CreateBlog(BaseModel):
 class ShowBlog(BaseModel):
     title: str
     content: str | None
-    created_at: date
+    # created_at: date
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class UpdateBlog(CreateBlog):

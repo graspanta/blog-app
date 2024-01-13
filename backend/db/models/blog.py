@@ -1,14 +1,7 @@
 from datetime import datetime
 
-from sqlalchemy import (
-    Boolean,
-    Column,
-    DateTime,
-    ForeignKey,  # noqa: E501
-    Integer,
-    String,
-    Text,
-)
+from sqlalchemy import ForeignKey  # noqa: E501
+from sqlalchemy import Boolean, Column, DateTime, Integer, String, Text
 from sqlalchemy.orm import relationship
 
 from backend.db.base_class import Base
@@ -21,5 +14,5 @@ class Blog(Base):
     content = Column(Text, nullable=True)
     author_id = Column(Integer, ForeignKey("user.id"))
     author = relationship("User", back_populates="blogs")
-    created_at = Column(DateTime, default=datetime.now)
+    created_at = Column(DateTime(timezone=True), default=datetime.now)
     is_active = Column(Boolean, default=False)

@@ -18,7 +18,7 @@ def retreive_blog(id: int, db: Session):
 
 
 def list_blogs(db: Session):
-    blogs = db.query(Blog).filter(Blog.is_active == True).all()  # noqa E712
+    blogs = db.query(Blog).all()
     return blogs
 
 
