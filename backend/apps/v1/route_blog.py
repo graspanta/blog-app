@@ -10,10 +10,14 @@ router = APIRouter()
 
 
 @router.get("/")
-def home(request: Request, db: Session = Depends(get_db)):
+def home(
+    request: Request,
+    alert: str | None = None,
+    db: Session = Depends(get_db),
+):
     blogs = list_blogs(db=db)
     return templates.TemplateResponse(
-        "blog/home.html", {"request": request, "blogs": blogs}
+        "blog/home.html", {"request": request, "blogs": blogs, "alert": alert}
     )
 
 

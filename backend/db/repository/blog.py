@@ -4,7 +4,7 @@ from backend.db.models.blog import Blog
 from backend.schemas.blog import CreateBlog, UpdateBlog
 
 
-def create_new_blog(blog: CreateBlog, db: Session, author_id: int = 1):
+def create_new_blog(blog: CreateBlog, db: Session, author_id: int):
     blog = Blog(**blog.dict(), author_id=author_id)
     db.add(blog)
     db.commit()
