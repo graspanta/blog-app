@@ -34,7 +34,7 @@ def register(  # noqa: F811
         user = UserCreate(email=email, password=password)
         create_new_user(user=user, db=db)
         return responses.RedirectResponse(
-            "/?alert=Successfully%20Registered",
+            "/?alert=登録に成功しました",
             status_code=status.HTTP_302_FOUND,  # noqa: E501
         )
     except ValidationError as e:
@@ -67,7 +67,7 @@ def login(  # noqa: F811
         )
     access_token = create_access_token(data={"sub": email})
     response = responses.RedirectResponse(
-        "/?alert=Successfully Logged In", status_code=status.HTTP_302_FOUND
+        "/?alert=ログインに成功しました", status_code=status.HTTP_302_FOUND
     )
     response.set_cookie(
         key="access_token", value=f"Bearer {access_token}", httponly=True

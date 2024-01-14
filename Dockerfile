@@ -2,6 +2,7 @@ FROM python:3.11-bookworm
 
 # It allows for log messages to be dumped into the stream immediately instead of being buffered.
 ENV PYTHONUNBUFFERED=1
+ENV TZ="Asia/Tokyo"
 
 WORKDIR /src
 

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title>Blog app</title>
+<title>ブログ一覧</title>
 {% endblock %}
 
 {% block content %}
@@ -17,10 +17,10 @@
               <h5 class="card-text">{{ blog.title }}</h5>
           </div>
           <div class="card-body">
-            <p class="card-text">First Published : {{blog.created_at.strftime('%Y-%m-%d')}}</p>
-            <small class="card-text text-muted">Content : {{blog.content[:60]}}...</small>
+            <p class="card-text">投稿日時 : {{blog.created_at.strftime('%Y-%m-%d %X')}}</p>
+            <small class="card-text text-muted">内容 : {{blog.content[:60]}}...</small>
             <br>
-            <a href="/app/blog/{{blog.id}}" class="btn btn-outline-success">Read more</a>
+            <a href="/app/blog/{{blog.id}}" class="btn btn-outline-success">続き</a>
           </div>
         </div>
       </div>
