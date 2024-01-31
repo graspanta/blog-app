@@ -1,0 +1,21 @@
+FROM python:3.11-bookworm
+
+ENV PYTHONUNBUFFERED=1
+ENV TZ="Asia/Tokyo"
+
+WORKDIR /src
+
+RUN pip install poetry
+
+# If poetry files exist
+COPY pyproject.toml* poetry.lock* ./
+
+# For deploying
+COPY backend backend
+COPY entrypoint.sh ./
+
+# If pyproject.toml file already exists, install libraries.
+RUN poetry config virtualenvs.in-project true
+RUN if [ -f pyprpject.toml ]; then poetry install --no-root; fi
+
+ENTRYPOINT bash entrypoint.sh
