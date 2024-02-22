@@ -16,6 +16,6 @@ COPY entrypoint.sh ./
 
 # If pyproject.toml file already exists, install libraries.
 RUN poetry config virtualenvs.in-project true
-RUN if [ -f pyprpject.toml ]; then poetry install --no-root; fi
+RUN if [ -f pyproject.toml ]; then poetry install --no-root; fi
 
 ENTRYPOINT bash entrypoint.sh
