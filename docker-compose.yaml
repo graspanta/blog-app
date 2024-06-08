@@ -9,8 +9,6 @@ services:
       - 8000:8000
     environment:
       - WATCHFILES_FORCE_POLLING=true # Give an environment variable to force the polling for hot reloading
-    env_file:
-      - .env
   db:
     image: mysql:8.0
     environment:

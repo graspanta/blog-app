@@ -1,7 +1,7 @@
 # blog-app
 
 ## 概要
-blog-appは、ブログ投稿サービスです。
+[blog-app](https://u3mmwdfqd2.ap-northeast-1.awsapprunner.com)は、ブログ投稿サービスです。
 
 <img src="images/home.png" width="400" />
 
@@ -21,12 +21,12 @@ blog-appは、ブログ投稿サービスです。
     <td>Python 3.11.7</td>
   </tr>
   <tr>
-    <td>フレームワーク</td>
-    <td>FastAPI, Bootstrap 5.3.0</td>
-  </tr>
-  <tr>
     <td>コンテナ管理</td>
     <td>Docker Compose</td>
+  </tr>
+  <tr>
+    <td>フレームワーク</td>
+    <td>FastAPI 0.109.2, Bootstrap 5.3.0</td>
   </tr>
   <tr>
     <td>データベース</td>
