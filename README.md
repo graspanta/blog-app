@@ -1,7 +1,7 @@
 # blog-app
 
 ## 概要
-[blog-app](https://u3mmwdfqd2.ap-northeast-1.awsapprunner.com)は、ブログ投稿サービスです。
+[blog-app](https://viznjuptkg.ap-northeast-1.awsapprunner.com)は、ブログ投稿サービスです。
 
 <img src="images/home.png" width="400" />
 

@@ -68,6 +68,11 @@ def delete_a_blog(
     current_user: User = Depends(get_current_user),
 ):
     message = delete_blog(id=id, author_id=current_user.id, db=db)
+    if not User:
+        raise HTTPException(
+            detail=message.get("error"),
+            status_code=status.HTTP_400_BAD_REQUEST,
+        )
     if message.get("error"):
         raise HTTPException(
             detail=message.get("error"),
