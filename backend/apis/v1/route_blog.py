@@ -33,7 +33,7 @@ def get_blog(id: int, db: Session = Depends(get_db)):
     blog = retreive_blog(id=id, db=db)
     if not blog:
         raise HTTPException(
-            detail=f"Blog with ID {id} does not exist.",
+            detail=f"{id}番のブログが存在しません",
             status_code=status.HTTP_404_NOT_FOUND,
         )
     return blog
@@ -78,4 +78,4 @@ def delete_a_blog(
             detail=message.get("error"),
             status_code=status.HTTP_400_BAD_REQUEST,
         )
-    return {"msg": f"Successfully deleted blog with id {id}"}
+    return {"msg": f"{id}番のブログの削除に成功しました"}

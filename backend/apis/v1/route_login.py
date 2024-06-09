@@ -32,7 +32,7 @@ def login_for_access_token(
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Incorrect email address or password",
+            detail="メールアドレスまたはパスワードを今一度ご確認ください",
         )
     access_token = create_access_token(data={"sub": user.email})
     return {"access_token": access_token, "token_type": "bearer"}
